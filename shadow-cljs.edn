@@ -1,0 +1,18 @@
+{:deps   true
+ :nrepl  {:port 9000}
+ :builds {:main     {:target     :browser
+                     :output-dir "resources/public/js/main"
+                     :asset-path "/js/main"
+
+                     :modules    {:app {:entries [fulcro-nodejs-ssr-example.client]}}
+
+                     :devtools   {:after-load fulcro_nodejs_ssr_example.client/start
+                                  :preloads   [fulcro.inspect.preload fulcro-nodejs-ssr-example.development-preload]
+                                  :http-root  "resources/public"
+                                  :http-port  8020}}
+
+          :server   {:main      fulcro-nodejs-ssr-example.server/main
+                     :target    :node-script
+                     :output-to "target/server.js"
+                     :devtools  {:after-load  fulcro-nodejs-ssr-example.server/start!
+                                 :before-load fulcro-nodejs-ssr-example.server/stop!}}}}

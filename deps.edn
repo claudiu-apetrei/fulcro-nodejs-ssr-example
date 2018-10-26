@@ -1,0 +1,14 @@
+{:deps    {org.clojure/clojure        {:mvn/version "1.9.0"},
+           org.clojure/clojurescript  {:mvn/version "1.10.339"}
+
+           thheller/shadow-cljs       {:mvn/version "2.6.7"},
+           fulcrologic/fulcro         {:mvn/version "2.6.10"},
+
+           sablono                    {:mvn/version "0.8.4"}
+           hiccups                    {:mvn/version "0.3.0"}
+
+           binaryage/devtools         {:mvn/version "0.9.10"},
+           fulcrologic/fulcro-inspect {:mvn/version "2.2.2", :exclusions [fulcrologic/fulcro-css]},
+           devcards                   {:mvn/version "0.2.4", :exclusions [cljsjs/react cljsjs/react-dom]}},
+ :aliases {}
+ :paths   ["src/main/app" "src/main/server"]}
