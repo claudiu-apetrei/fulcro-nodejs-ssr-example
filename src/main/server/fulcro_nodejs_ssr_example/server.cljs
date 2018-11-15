@@ -58,7 +58,7 @@
         fulcro-client    (fc/new-fulcro-client
                           :started-callback started-callback
                           :networking {:remote (fcn/fulcro-http-remote {:url "http://localhost:3000/api"})})
-        mounted-app      (fc/mount* fulcro-client root/Root nil)
+        mounted-app      (fc/mount fulcro-client root/Root nil)
         reconciler       (:reconciler mounted-app)]
     (defer-until-network-idle
      reconciler
